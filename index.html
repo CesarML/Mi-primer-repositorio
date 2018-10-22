@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validacion con PHP</title>
+
+	<meta charset="utf-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com
+	/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1
+	/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7
+	/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+	<!-- Cabecera -->
+	<header>
+		<div class="nav-main">
+			<img class="Mercadolibre" src="Mercadolibre.jpg">
+
+			<div class="nav-help">
+				<a href="#">Ayuda</a>
+			</div>
+		</div>
+	</header>
+
+	<button class="btn btn-primary boton" id="btnRegistrar" data-toggle="modal" data-target="#">Registrar</button>
+			<div class="modal fade" id="mymodal" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Registrar:</h4>
+							
+						</div>
+						<div class="modal-body">
+							<form  id="formulario" >
+								<div class="row form-group">
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<span id="spNombre"></span>
+										<label class="etiquetas" for="inputdefault">Nombre(s):</label>
+										<input name="nombre" type="text" id="iptnombre" class="form-control linea">
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<span id="spApellidop"></span>
+										<label for="inputdefault">Apellido Paterno:</label>
+										<input name="apellidop" type="text" id="iptApellidoP" class="form-control linea">
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<span id="spApellidom"></span>
+										<label for="inputdefault">Apellido Materno:</label>
+										<input name="apellidom" type="text" id="iptApellidoM" class="form-control linea">
+									</div>
+								</div>
+								<div class="row form-group">
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<span id="spEmail"></span>
+										<label class="etiquetas" for="inputdefault">Email:</label>
+										<input name="correo" type="text" id="iptEmail" class="form-control">
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6">
+										<span id="spContraseña"></span>
+										<label class="etiquetas" for="inputdefault">Password:</label>
+										<input name="pass" type="password" id="iptcontraseña" class="form-control">
+									</div>
+								</div>	
+								<!--Campo edad-->
+			                <div class="form-group col-xs-6 col-sm-6 col-md-6">
+			                	<span id="spEdad"></span>
+			                	<label for="example-number-input" class="col-2 col-form-label">Edad:</label>			                	
+			                  		<input class="form-control" type="number" value="18" id="edad" name="edad">			            			              
+								</div>
+
+								<!--Agregar archivo-->
+			                <div class="col-xs-12 col-sm-12 col-md-12 form-group">
+			                  <label for="exampleInputFile">Agregar archivo:</label>
+			                  <input type="file" class="form-control-file" id="files" name="imagen" aria-describedby="fileHelp">
+			                  <small id="fileHelp" class="form-text text-muted">Máxmo 2mb.</small>
+			                  <output id="list"></output>
+			                  <span id="spImagen"></span>
+			                </div> 
+			            
+								<div class="row">
+									<span id="spEstado" class=" col-xs-12 col-sm-12 col-md-12"></span>
+								</div>
+								<div class="form-group col-xs-8 col-sm-8 col-md-8">
+									<label for="inputdefault">Estado:</label>
+									<select name="estado" class="form-control" id="sel1">
+										<option value="none">Seleccione un Estado:</option>
+										<option>Michoacán</option>
+										<option>Jalisco</option>
+										<option>Sinaloa</option>
+										<option>Querétaro</option>
+										<option>Colima</option>
+										<option>Guanajuato</option>
+										<option>Guerrero</option>
+										<option>Veracruz</option>
+										<option>Estado de México</option>
+										<option>Nuevo León</option>
+										<option>Chihuahua</option>
+									</select>
+								</div>	
+									<span id="spPref" class="col-xs-12 col-sm-12 col-md-12"></span>
+									
+
+									<label>Que productos le interesan mas ?</label>
+								<div id="docs">
+								<div class="row">
+							    </div>
+								<div class="row form-group">
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<label class="sin">
+											<input type="checkbox" name ="electro" id="electro" value="1">Electrodomesticos 
+										</label>
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+								    	<label class="sin">
+								    		<input type="checkbox" name="ropa" id="ropa" value="2">Ropa 
+										</label>
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+							     		<label class="sin">
+							     		<input type="checkbox" name="autos" id="autos" value="3">Automoviles
+										</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<label class="sin">
+										<input type="checkbox" name="cel" id="cel" value="4">Celulares 
+										</label>
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+								    	<label class="sin">
+								    		<input type="checkbox" name="tecnologia" id="tecnologia" value="5">Tecnología
+										</label>
+									</div>
+									<div class="col-xs-4 col-sm-4 col-md-4">
+										<label class="sin">
+											<input type="checkbox" name="software" id="software" value="6">Software 
+										</label>
+									</div>
+								</div>
+							</div><br>
+								<div class="row"><span id="spEdocivil" class="col-xs-12 col-sm-12 col-md-12"></span>
+								</div>
+								<div class="row form-group" id="stat">
+									<label class="col-xs-12 col-sm-12 col-md-12">Estado civil:</label>
+									<div class="col-xs-3 col-sm-3 col-md-3">
+										<label class="sin">
+											<input type="radio" id="soltero" name="status" value="activo">Soltero
+										</label>
+									</div>
+									<div class="col-xs-3 col-sm-3 col-md-3">
+										<label class="sin">
+											<input type="radio" id="casado" name="status" value="baja">Casado
+										</label>
+									</div>
+									<div class="col-xs-3 col-sm-3 col-md-3">
+										<label class="sin">
+											<input type="radio" id="divorciado" name="status" value="egresado">Divorciado
+										</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-sm-12 col-md-12">
+									<label for="inputdefault">Observaciones:</label>
+									<span id="spObservacion" class=""></span>
+									<textarea  name="observacion" class="form-control" rows="4" id="observ"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-4 col-sm-4 col-md-4">
+									<button type="button" id="btnAgregar" class="btn btn-info ">Agregar Nota</button>
+
+									<button type="button" id="btnEliminar" class="btn btn-danger">Eliminar Nota</button>
+									<div id="continp"></div>									
+								    </div>
+								</div>  
+								
+							</form>
+							<button id="btnValidar" class="btn btn-primary">Validar</button> 
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+	        <!--Script para mostrar la imagen seleccionada-->
+
+    <script src="ajax.js"></script>
+    <script src="leerimagen.js"></script>  
+</body>
+</html>
